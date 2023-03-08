@@ -1,0 +1,71 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\Essentials\DIO.c -xcl_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.xcl -macro_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\Essentials\DIO.c -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.tmp
+  rspfile_name = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.xcl.rsp
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\main.c -xcl_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.xcl -macro_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\main.c -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.tmp
+  rspfile_name = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\myOS.c -xcl_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.xcl -macro_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\myOS.c -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.tmp
+  rspfile_name = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.xcl.rsp
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\startup_ewarm.c -xcl_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.xcl -macro_file C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\startup_ewarm.c -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.tmp
+  rspfile_name = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.xcl.rsp
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.pbi : INDEXER C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.xcl |  $
+C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\Essentials\DIO.c
+  flags = -out=C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.pbi -f C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.xcl
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\main.c
+  flags = -out=C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.pbi -f C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.xcl
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.pbi : INDEXER C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.xcl |  $
+C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\myOS.c
+  flags = -out=C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.pbi -f C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.xcl
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.pbi : INDEXER C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.xcl |  $
+C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\startup_ewarm.c
+  flags = -out=C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.pbi -f C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.xcl
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\ProjectWithTiva.pbw : MAKEBROWSE C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\ProjectWithTiva.pbd
+  flags = C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\ProjectWithTiva.pbd -output C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\ProjectWithTiva.pbw
+
+build C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\ProjectWithTiva.pbd : PDBLINK C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.pbi |  $
+C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.pbi $
+C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.pbi $
+C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.pbi
+  flags = -M C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\ProjectWithTiva.pbd C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\DIO.pbi C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\main.pbi C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\myOS.pbi C$:\Users\Eldeeb\Downloads\Moataz\EmbeddedSystems\ProjectWithTiva\Debug\BrowseInfo\startup_ewarm.pbi
+
