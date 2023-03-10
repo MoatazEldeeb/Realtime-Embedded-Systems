@@ -2,13 +2,10 @@
 #include "myOS.h"
 
 uint32 start;
-uint32 taskTime1;
-uint32 taskTime2;
-uint32 taskTime3;
-uint32 tickss = 1;
 
 struct Tasks Task_no[3];
-static uint32 volatile ticks_control;
+
+uint32 volatile ticks_control;
 void Systick_Handler(void)
 {
   ++ticks_control;
@@ -81,13 +78,16 @@ int main()
 
   Task_no[0].ptr_task = &blink1;
   Task_no[0].period = 2;
-
+  Task_no[0].priority = 1;
+  
   Task_no[1].ptr_task = &blink2;
   Task_no[1].period = 4;
-
+  Task_no[1].priority = 2;
+  
   Task_no[2].ptr_task = &blink3;
   Task_no[2].period = 6;
-
+  Task_no[2].priority = 3;
+  
   while (1)
   {
     __asm("CPSID  I");

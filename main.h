@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-//#include "types.h"
+// #include "types.h"
 #include <time.h>
 #include "stdint.h"
 #include "stdbool.h"
@@ -33,6 +33,6 @@ struct Tasks
     uint32 priority;
 };
 extern struct Tasks Task_no[3];
-//extern uint32 volatile ticks_control;
+extern uint32 volatile ticks_control;
 
 #endif
