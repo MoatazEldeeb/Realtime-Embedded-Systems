@@ -29,7 +29,7 @@ void OS_sched(void)
   uint32 num_tasks_to_run = 0;
   for (uint32 i = 0; i < 3; i++)
   {
-    if ((ticks_control % Task_no[i].period) == 0)
+    if ((ticks_control % Task_no[i].period) == 0 && ticks_control !=0)
     {
       tasksToBeRun[num_tasks_to_run] = Task_no[i];
       num_tasks_to_run++;

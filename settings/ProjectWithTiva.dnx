@@ -16,7 +16,7 @@
         <ShowSource>1</ShowSource>
     </Trace1>
     <DebugChecksum>
-        <Checksum>1898564545</Checksum>
+        <Checksum>1695073869</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -53,13 +53,12 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Bp0>_ 1 "STD_CODE2" "{$PROJ_DIR$\main.c}.97.5" 0 0 1 "" 0 ""</Bp0>
-        <Bp1>_ 1 "STD_CODE2" "{$PROJ_DIR$\main.c}.21.3" 0 0 1 "" 0 ""</Bp1>
-        <Bp2>_ 1 "STD_CODE2" "{$PROJ_DIR$\main.c}.40.3" 0 0 1 "" 0 ""</Bp2>
-        <Bp3>_ 1 "STD_CODE2" "{$PROJ_DIR$\main.c}.59.3" 0 0 1 "" 0 ""</Bp3>
+        <Bp0>_ 0 "STD_CODE2" "{$PROJ_DIR$\main.c}.97.5" 0 0 1 "" 0 ""</Bp0>
+        <Bp1>_ 1 "STD_CODE2" "{$PROJ_DIR$\main.c}.23.3" 0 0 1 "" 0 ""</Bp1>
+        <Bp2>_ 1 "STD_CODE2" "{$PROJ_DIR$\main.c}.42.3" 0 0 1 "" 0 ""</Bp2>
+        <Bp3>_ 1 "STD_CODE2" "{$PROJ_DIR$\main.c}.61.3" 0 0 1 "" 0 ""</Bp3>
         <Bp4>_ 1 "STD_CODE2" "{$PROJ_DIR$\myOS.c}.43.15" 0 0 1 "" 0 ""</Bp4>
-        <Bp5>_ 1 "STD_CODE2" "{$PROJ_DIR$\myOS.c}.40.5" 0 0 1 "" 0 ""</Bp5>
-        <Count>6</Count>
+        <Count>5</Count>
     </Breakpoints2>
     <Interrupts>
         <Enabled>1</Enabled>
